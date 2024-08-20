@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/courses/assign-instructor" method="post">
+    <label for="course">Course:</label>
+    <select name="courseId">
+        <c:forEach var="course" items="${courses}">
+            <option value="${course.id}">${course.name}</option>
+        </c:forEach>
+    </select>
+
+    <label for="instructor">Instructor:</label>
+    <select name="instructorId">
+        <c:forEach var="instructor" items="${instructors}">
+            <option value="${instructor.id}">${instructor.name}</option>
+        </c:forEach>
+    </select>
+
+    <button type="submit">Assign</button>
+</form>
+</body>
+</html>
